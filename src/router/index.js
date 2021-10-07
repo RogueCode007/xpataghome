@@ -52,7 +52,11 @@ const routes = [
       {
         path: "/home/howitworks",
         component: () => import ("@/views/HowItWorks")
-      }
+      },
+      {
+        path: "/home/aboutus",
+        component: () => import ("@/views/AboutUs")
+      },
     ]
   },
   

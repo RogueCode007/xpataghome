@@ -11,7 +11,7 @@
                     <router-link to="/" class="text-white text-sm">Home</router-link>
                 </li>
                 <li>
-                    <router-link to="/" class="text-white text-sm">About Us</router-link>
+                    <router-link to="/home/aboutus" class="text-white text-sm">About Us</router-link>
                 </li>
                 <li>
                     <router-link to="/home/categories" class="text-white text-sm">Categories</router-link>
@@ -20,7 +20,7 @@
                     <router-link to="/" class="text-white text-sm">Why Xpatag</router-link>
                 </li>
                 <li>
-                    <router-link to="/howitworks" class="text-white text-sm">How it works</router-link>
+                    <router-link to="/home/howitworks" class="text-white text-sm">How it works</router-link>
                 </li>
                 <li>
                     <router-link to="/" style="background: #52B95E;" class="mt-6 mx-auto text-sm rounded-3xl px-6 py-2 text-white oultine-none focus:outline-none">Get Started</router-link>

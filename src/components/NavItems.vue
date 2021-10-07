@@ -31,7 +31,7 @@
                 animateClass="animated"
                 :begin="true"
             >
-                <router-link to="/" class="text-black text-sm mt-4 block">About us</router-link>
+                <router-link to="/home/aboutus" class="text-black text-sm mt-4 block">About us</router-link>
             </u-animate>
             <u-animate
                 name="fadeInRight"

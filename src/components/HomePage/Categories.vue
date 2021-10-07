@@ -1,7 +1,7 @@
 <template>
   <div class="px-3 lg:pl-14 lg:pr-0 py-8 lg:pb-12" style="background-color: #F2F2F2">
       <h1 class="text-3xl mb-6 font-bold dark">Our Categories</h1>
-        <div class="horizontalmenu w-full" ref="horizontalmenu2">
+        <div class="horizontalmenu w-full">
             <router-link to="/" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11.png" alt="">
