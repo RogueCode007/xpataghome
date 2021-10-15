@@ -2,43 +2,43 @@
   <div class="px-3 lg:pl-14 lg:pr-0 py-8 lg:pb-12" style="background-color: #F2F2F2">
       <h1 class="text-3xl mb-6 font-bold dark">Our Categories</h1>
         <div class="horizontalmenu w-full">
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11.png" alt="">
                     <p class="dark font-bold mt-3">Crop Production</p>
                 </div>
             </router-link>
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11 (1).png" alt="">
                     <p class="dark font-bold mt-3">Animal Production</p>
                 </div>
             </router-link>
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11 (2).png" alt="">
                     <p class="dark font-bold mt-3">Agro Processing</p>
                 </div>
             </router-link>
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11 (3).png" alt="">
                     <p class="dark font-bold mt-3">Agri Tech</p>
                 </div>
             </router-link>
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11 (3).png" alt="">
                     <p class="dark font-bold mt-3">Agri Tech</p>
                 </div>
             </router-link>
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11 (3).png" alt="">
                     <p class="dark font-bold mt-3">Agri Tech</p>
                 </div>
             </router-link>
-            <router-link to="/" class="inline-block hrmenuitem">
+            <router-link to="/home/subcategories" class="inline-block hrmenuitem">
                 <div>
                     <img src="@/assets/Images/categories/Rectangle 11 (3).png" alt="">
                     <p class="dark font-bold mt-3">Agri Tech</p>
