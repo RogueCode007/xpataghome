@@ -165,7 +165,7 @@ export default {
         justify-content: flex-start;
     }
     .item{
-        flex: 1 1 24%;
+        flex: 0 0 24%;
         /* max-width: none; */
         margin: 0 0.5%;
         height: auto
@@ -197,7 +197,7 @@ export default {
         margin-right: auto
     }
     .item{
-        flex: 1 1 20%;
+        flex: 0 0 20%;
         margin: 0 2.5%;
         max-width: 280px
     }

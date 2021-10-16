@@ -15,7 +15,7 @@
               <div class="mt-2">
                     <h1 class="font-bold text-lg">{{data.title}}</h1> 
                     <p class="mt-4 light">{{data.content}}</p>  
-                    <router-link to="/home/subcategories" class="block view mt-4 text-center lg:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">View Services</router-link> 
+                    <router-link to="/home/subcategories" class="block view mt-4 text-center lg:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">View Subcategories</router-link> 
               </div> 
           </div>
       </div>
@@ -129,7 +129,7 @@ export default {
         height: auto
     }
     .view{
-        max-width: 150px;
+        /* max-width: 150px; */
         margin-top: 20px
     }
     .imgbox{
@@ -143,7 +143,7 @@ export default {
         margin-right: auto
     }
     .item{
-        flex: 1 1 20%;
+        flex: 0 0 20%;
         margin: 0 2.5%;
         max-width: 280px
     }
