@@ -8,14 +8,14 @@
           <img src="@/assets/Images/categories/image 3.png" alt="" class="hidden lg:block">
       </div>
       <div class="box py-8 px-3 lg:px-14">
-          <div v-for="(data, index) in datas" :key="index" class="item p-3">
+          <div v-for="(category, index) in categories" :key="index" class="item p-3 flex flex-col justify-between">
               <div class="w-full imgbox" style="border-radius: 7.81px">
-                  <img :src="data.img" class="w-full h-full">
+                  <img :src="category.image" class="w-full h-full">
               </div>
-              <div class="mt-2">
-                    <h1 class="font-bold text-lg">{{data.title}}</h1> 
-                    <p class="mt-4 light">{{data.content}}</p>  
-                    <router-link to="/home/subcategories" class="block view mt-4 text-center lg:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">View Subcategories</router-link> 
+              <div class="mt-2 ">
+                    <h1 class="font-bold text-lg">{{category.name}}</h1> 
+                    <p class="mt-4 light">{{category.description | slicer}}</p>  
+                    <button @click="viewSubs(category)" class="block view mt-4 text-center lg:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">View Subcategories</button> 
               </div> 
           </div>
       </div>
@@ -23,52 +23,29 @@
 </template>
 
 <script>
-import img from "@/assets/Images/categories/Rectangle 11.png"
-import img1 from "@/assets/Images/categories/Rectangle 11 (1).png"
-import img2 from "@/assets/Images/categories/Rectangle 11 (2).png"
-import img3 from "@/assets/Images/categories/Rectangle 11 (3).png"
+import {mapState} from 'vuex'
 export default {
     data(){
         return {
-            datas: [
-                {
-                    img: img,
-                    title: "Crop Production",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-                {
-                    img: img1,
-                    title: "Animal Production",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-                {
-                    img: img2,
-                    title: "Forestry Servcies",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-                {
-                    img: img3,
-                    title: "Forestry",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-                {
-                    img: img,
-                    title: "Crop Production",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-                {
-                    img: img2,
-                    title: "Crop Production",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-                {
-                    img: img2,
-                    title: "Crop Production",
-                    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliqua."
-                },
-            ]
         }
-    }
+    },
+    methods:{
+        viewSubs(obj){
+            this.$store.commit('selectCategory', obj)
+            this.$router.push("/home/subcategories")
+        }
+    },
+    filters:{
+        slicer(val){
+            return val.slice(0, 30) + '...'
+        }
+    },
+    computed:{
+        ...mapState({
+            categories: state => state.categories
+        })
+    },
+            
 }
 </script>
 

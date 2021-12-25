@@ -26,9 +26,10 @@ export default {
     Testimonials,
     GreenBox
   },
+ 
   created(){
     this.$store.commit('showMobileNav', false)
-  }
+  },
 }
 </script>
 <style scoped>

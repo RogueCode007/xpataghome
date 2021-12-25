@@ -2,8 +2,8 @@
   <div>
       <div class="cont relative pt-4 pb-10 px-3 lg:px-36 lg:py-8 md:flex md:justify-between md:items-end">
           <div>
-                <h1 class="text-white text-2xl lg:text-4xl font-bold">Prof Lateef Sanni</h1>
-                <p class="mt-4 light text-white lg:text-xl">Root crop, research specialist</p>
+                <h1 class="text-white text-2xl lg:text-4xl font-bold">{{profile.firstname}} {{profile.lastname}}</h1>
+                <p class="mt-4 light text-white lg:text-xl">{{profile.profession}}</p>
           </div>
           <div class="mt-6">
               <div class="flex items-center md:justify-end">
@@ -14,7 +14,7 @@
                     <p class="text-xs text-white">Report</p>
                </div>
                <div class="mt-4 md:flex md:gap-4">
-                   <router-link to="/home/service" class="block link bg-white mt-4 text-center md:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">Book Service</router-link> 
+                   <router-link to="/" class="block link bg-white mt-4 text-center md:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">Book Service</router-link> 
                    <router-link to="/" class="block link border-white border-solid border text-white mt-4 text-center md:mt-0  text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">Get a Quote</router-link> 
                </div> 
           </div>
@@ -23,23 +23,23 @@
           </div>
       </div>
       <div class="lg:flex flex-row-reverse">
-            <div>
+            <div class="lg:w-full">
                 <div class="mt-10 lg:mt-28 px-3 lg:px-16">
-                    <p class="text-xl lg:text-2xl font-bold">Sanni's Services</p>
+                    <p class="text-xl lg:text-2xl font-bold">{{profile.firstname}}'s Services</p>
                 </div>
                 <div class="box py-8 px-3 lg:px-14">
-                    <div v-for="(data, index) in datas" :key="index" class="item py-3">
+                    <div v-for="(service, index) in services" :key="index" class="item py-3" @click="viewService(service, profile)">
                         <div class="w-full imgbox relative px-3">
-                            <img :src="data.img" class="w-full h-full">
+                            <img :src="service.image" class="w-full h-full">
                             <div class="absolute profile">
                                 <img src="@/assets/Images/categories/Ellipse 10.png" alt="" class="w-full h-full">
                             </div>
                         </div>
                         <div class="mt-8">
-                                <h1 class="font-bold text-base px-3">{{data.title}}</h1> 
-                                <p class="mt-4 light px-3">{{data.content}}</p>  
-                                <p class="mt-2 text-sm light px-3">Lagos</p> 
-                                <p class="mt-2 font-bold text-xs px-3">#12,000 - #15,000</p>
+                                <h1 class="font-bold text-base px-3">{{profile.firstname}} {{profile.lastname}}</h1> 
+                                <p class="mt-4 light px-3">{{service.description | slicer}}</p>  
+                                <p class="mt-2 text-sm light px-3">{{profile.city}}</p> 
+                                <!-- <p class="mt-2 font-bold text-xs px-3">#12,000 - #15,000</p> -->
                         </div> 
                     </div>
                 </div>
@@ -71,25 +71,26 @@
                 <div class="mt-6 px-3 lg:px-14 mb-10">
                     <div class="rounded border border-solid">
                             <div class="p-3">
-                                <h3 class="font-bold">About Hughes Bankole</h3>
-                                <p class="light mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum ipsum, numquam odio consectetur atque omnis totam nulla aliquam eaque nostrum vitae eos facere dolorum blanditiis ab facilis voluptas fugit!</p>
+                                <h3 class="font-bold">About {{profile.firstname}} {{profile.lastname}}</h3>
+                                <p class="light mt-4">{{profile.portfolio[profile.portfolio.length - 1].description}}</p>
                             </div>
-                            <div class="p-3 border-t border-solid">
+                            <!-- <div class="p-3 border-t border-solid">
                                 <h3 class="font-bold">Skills</h3>
                                 <p class="light mt-4">Greenhouse, Farm Equipment, Manual Labor, Irrigation Systems, Heavy Equipment, Weather Conditions</p>
-                            </div>
-                            <div class="p-3 border-t border-solid">
+                            </div> -->
+                            <div class="p-3 border-t border-solid" v-if="profile.education">
                                 <h3 class="font-bold">Education</h3>
-                                <p class="light mt-4">B.A. - Agricultural Engineering</p>
-                                <p class="light mt-2 text-gray-500">Federal University of Technology, Akure, Graduated 2020</p>
+                                <p class="light mt-4">{{profile.education[profile.education.length - 1].degree}}</p>
+                                <p class="light mt-2 text-gray-500">{{profile.education[profile.education.length - 1].school}} {{profile.education[profile.education.length - 1].year}}</p>
                             </div>
-                            <div class="p-3 border-t border-solid">
+                            <div class="p-3 border-t border-solid" v-if="profile.certificate">
                                 <h3 class="font-bold">Certification</h3>
-                                <p class="light mt-4">Agriculture, Economics and Nature</p>
-                                <p class="light mt-2 text-gray-500">University of Western Australia</p>
-                                <a href="#" class="block mt-4 text-green-500 font-bold">Download File</a>
+                                <!-- <p class="light mt-4">Agriculture, Economics and Nature</p> -->
+                                <p class="light mt-2 text-gray-500">{{profile.certificate[profile.certificate.length - 1].issued_by}}</p>
+                                <a :href="profile.certificate[profile.certificate.length - 1].link" target="_blank" rel="noopener noreferrer" class="block mt-4 text-green-500 font-bold">View</a>
+                                <!-- <a href="#" class="block mt-4 text-green-500 font-bold">Download File</a> -->
                             </div>
-                            <div class="p-3 border-t border-solid">
+                            <!-- <div class="p-3 border-t border-solid">
                                 <h3 class="font-bold">Portfolio</h3>
                                 <div class="mt-4 flex justify-between items-center">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +110,7 @@
                                     <p class="light mt-4">My Agric Science portfolio </p>
                                 </div>
                                 
-                            </div>
+                            </div> -->
                     </div>
                     
                 </div>
@@ -119,53 +120,53 @@
 </template>
 
 <script>
-import img from "@/assets/Images/categories/Rectangle 11.png"
-import img1 from "@/assets/Images/categories/Rectangle 11 (1).png"
-import img2 from "@/assets/Images/categories/Rectangle 11 (2).png"
-import img3 from "@/assets/Images/categories/Rectangle 11 (3).png"
+// import img from "@/assets/Images/categories/Rectangle 11.png"
+// import img1 from "@/assets/Images/categories/Rectangle 11 (1).png"
+// import img2 from "@/assets/Images/categories/Rectangle 11 (2).png"
+// import img3 from "@/assets/Images/categories/Rectangle 11 (3).png"
+import axios from 'axios'
+import baseURL from '@/main'
+// import {mapState} from 'vuex'
 export default {
     data(){
         return {
-            datas: [
-                {
-                    img: img,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-                {
-                    img: img1,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-                {
-                    img: img2,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-                {
-                    img: img3,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-                {
-                    img: img,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-                {
-                    img: img2,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-                {
-                    img: img2,
-                    title: "Hughes Bankole",
-                    content: "Detecting Maize Disease"
-                },
-            ]
+            profile: {},
+            id: null,
+            services: [],
         }
+    },
+    methods:{
+        getProfile(){
+            this.$store.commit('startLoading')
+            axios.get(`${baseURL}/expert/profile/${this.id}`)
+            .then((res)=>{
+                this.profile = res.data.data.profile
+                this.services = res.data.data.services
+                console.log(this.profile)
+                console.log(this.services)
+                this.$store.commit('endLoading')
+            })
+            .catch((err)=>{
+                this.$store.dispatch('handleError', err)
+            })
+        },
+        viewService(service, profile){
+            this.$store.commit('setService', service)
+            this.$store.commit('setProfile', profile)
+            this.$router.push('/home/service')
+        }
+    },
+    
+    filters:{
+        slicer(val){
+            return val.slice(0, 30) + '...'
+        }
+    },
+    mounted(){
+        this.id = this.$route.params.id
+        console.log(this.id)
+        this.getProfile()
     }
-
 }
 </script>
 
@@ -245,6 +246,7 @@ export default {
         height: auto
     }
     .infobox{
+        min-width: 500px;
         max-width: 500px
     }
     .person{

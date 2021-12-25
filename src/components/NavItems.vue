@@ -47,17 +47,6 @@
             <u-animate
                 name="fadeInRight"
                 delay="0s"
-                duration="1.6s"
-                :iteration="1"
-                :offset="20"
-                animateClass="animated"
-                :begin="true"
-            >
-                <router-link to="/" class="text-black text-sm mt-4 block">Why Xpatag</router-link>
-            </u-animate>
-            <u-animate
-                name="fadeInRight"
-                delay="0s"
                 duration="1.8s"
                 :iteration="1"
                 :offset="20"

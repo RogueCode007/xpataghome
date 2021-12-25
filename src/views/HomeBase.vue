@@ -13,9 +13,7 @@ export default {
     components:{
         Nav, MobileNav
     },
-    created(){
-        this.$store.commit('showMobileNav', false)
-    }
+    
 }
 </script>
 

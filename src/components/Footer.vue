@@ -5,7 +5,7 @@
               <ul>
                   <li class="text-black font-bold">COMPANY</li>
                   <li class="light">
-                      <router-link to="/" class="mt-4 text-sm">About Us</router-link>
+                      <router-link to="/home/aboutus" class="mt-4 text-sm">About Us</router-link>
                   </li>
                   <li class="light">
                       <router-link to="/" class="mt-4 text-sm">Blog</router-link>

@@ -2,11 +2,7 @@
    <div class="l-modal">
       <div class="loading-modal w-full">
           <div class="text-center loader">
-            <div class="lds-ring">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            
           </div>
       </div>
     </div>

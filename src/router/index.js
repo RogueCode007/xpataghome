@@ -26,7 +26,12 @@ const routes = [
         component: () => import ("@/views/Subcategories")
       },
       {
-        path: '/home/profile',
+        path: '/home/services',
+        name: 'Services',
+        component: () => import ("@/views/Services")
+      },
+      {
+        path: '/home/profile/:id',
         name: 'Profile',
         component: () => import ("@/views/Profile")
       },
