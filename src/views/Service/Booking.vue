@@ -92,7 +92,7 @@ export default {
   methods:{
     bookService(){
       console.log(this.service.id)
-      window.open(`https://xpatagcustomer.herokuapp.com/login/${this.service.id}`, '_blank')
+      window.open(`http://localhost:8080/login?serviceId=${this.service.id}`, '_blank')
     }
   },
   mounted(){
