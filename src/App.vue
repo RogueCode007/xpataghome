@@ -90,4 +90,10 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+.norecord{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 </style>

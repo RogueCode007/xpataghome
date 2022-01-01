@@ -2,12 +2,12 @@
   <div class="px-3 lg:pl-14 lg:pr-0 py-8 lg:pb-12" style="background-color: #F2F2F2">
       <h1 class="text-3xl mb-6 font-bold dark">Our Categories</h1>
         <div class="horizontalmenu w-full">
-            <router-link to="/home/subcategories" class="inline-block hrmenuitem" v-for="(category, index) in categories" :key="index">
+            <div to="/home/subcategories" @click="viewSubs(category)" class="inline-block hrmenuitem" v-for="(category, index) in categories" :key="index">
                 <div>
                     <img :src="category.image" alt="Placeholder image">
                     <p class="dark font-bold mt-3">{{category.name}}</p>
                 </div>
-            </router-link>
+            </div>
             
         </div>
         <div class="mt-10 lg:flex lg:gap-6 mx-auto" style="max-width: 500px">
@@ -24,6 +24,12 @@ export default {
         ...mapState({
             categories: state => state.categories
         })
+    },
+    methods:{
+        viewSubs(obj){
+            this.$store.commit('selectCategory', obj)
+            this.$router.push("/home/subcategories")
+        }
     },
     mounted(){
         console.log(this.categories)

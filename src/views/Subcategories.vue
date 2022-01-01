@@ -7,7 +7,7 @@
           </div>
           <img src="@/assets/Images/categories/image 3.png" alt="" class="hidden lg:block">
       </div>
-      <div class="box py-8 px-3 lg:px-14">
+      <div v-if="category.sub_category.length > 0" class="box py-8 px-3 lg:px-14">
           <div v-for="(category, index) in category.sub_category" :key="index" class="item p-3 flex flex-col justify-between">
               <div class="w-full imgbox" style="border-radius: 7.81px">
                   <img :src="category.image" class="w-full h-full">
@@ -19,6 +19,7 @@
               </div> 
           </div>
       </div>
+      <p v-else class="norecord">No records found</p>
   </div>
 </template>
 
@@ -62,6 +63,12 @@ export default {
     scroll-behavior: smooth;
     flex-wrap: nowrap;
     
+}
+.norecord{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .box::-webkit-scrollbar
 {

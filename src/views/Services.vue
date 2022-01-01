@@ -51,6 +51,7 @@
               </div> 
           </div>
       </div>
+      <p v-else class="norecord">No records found</p>
   </div>
 </template>
 
