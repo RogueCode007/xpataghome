@@ -1,14 +1,14 @@
 <template>
   <div class="px-3 lg:pl-14 lg:pr-0 py-8 lg:pb-12" style="background-color: #F2F2F2">
       <h1 class="text-3xl mb-6 font-bold dark">Our Categories</h1>
-        <div class="horizontalmenu w-full">
-            <div to="/home/subcategories" @click="viewSubs(category)" class="inline-block hrmenuitem" v-for="(category, index) in categories" :key="index">
+        <Skeleton  v-if="categories.length == 0"/>
+        <div v-else class="horizontalmenu w-full">
+            <div @click="viewSubs(category)" class="inline-block hrmenuitem" v-for="(category, index) in categories" :key="index">
                 <div>
-                    <img :src="category.image" alt="Placeholder image">
+                    <img :src="category.image" alt="Placeholder image" class="skeleton">
                     <p class="dark font-bold mt-3">{{category.name}}</p>
                 </div>
             </div>
-            
         </div>
         <div class="mt-10 lg:flex lg:gap-6 mx-auto" style="max-width: 500px">
             <a target="blank" href="https://xpatag.herokuapp.com/signup" style="background: #52B95E;" class="block w-2/3 mx-auto text-sm rounded-3xl px-6 py-2 text-center text-white oultine-none focus:outline-none">Register as an expert</a>
@@ -19,7 +19,9 @@
 
 <script>
 import {mapState} from 'vuex'
+import Skeleton from "@/components/Skeleton"
 export default {
+    components: {Skeleton},
     computed:{
         ...mapState({
             categories: state => state.categories
@@ -40,6 +42,18 @@ export default {
 <style scoped>
 .dark{
     color: #454545
+}
+.skeleton {
+  /* opacity: .7; */
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
 .horizontalmenu{
   display: flex;

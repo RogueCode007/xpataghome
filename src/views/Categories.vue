@@ -10,7 +10,7 @@
       <div class="box py-8 px-3 lg:px-14">
           <div v-for="(category, index) in categories" :key="index" class="item p-3 flex flex-col justify-between">
               <div class="w-full imgbox" style="border-radius: 7.81px">
-                  <img :src="category.image" class="w-full h-full">
+                  <img :src="category.image" class="skeleton w-full h-full">
               </div>
               <div class="mt-2 ">
                     <h1 class="font-bold text-lg">{{category.name}}</h1> 
@@ -50,6 +50,18 @@ export default {
 </script>
 
 <style scoped>
+.skeleton {
+  /* opacity: .7; */
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
 .cont{
     background: linear-gradient(114.28deg, #2EA05B -9.79%, #CCCD34 104.57%);
 

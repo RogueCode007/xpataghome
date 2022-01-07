@@ -59,6 +59,14 @@ const routes = [
         component: () => import ("@/views/HowItWorks")
       },
       {
+        path: "/home/terms",
+        component: () => import ("@/views/Terms")
+      },
+      {
+        path: "/home/privacypolicy",
+        component: () => import ("@/views/PrivacyPolicy")
+      },
+      {
         path: "/home/aboutus",
         component: () => import ("@/views/AboutUs")
       },

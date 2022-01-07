@@ -5,12 +5,12 @@
                 <h1 class="text-white text-2xl lg:text-4xl font-bold">Explore XpatAg Categories</h1>
                 <p class="mt-4 light text-white lg:text-xl">Your window to the world of experts</p>
           </div>
-          <img src="@/assets/Images/categories/image 3.png" alt="" class="hidden lg:block">
+          <img src="@/assets/Images/categories/image 3.png" alt="" class=" hidden lg:block">
       </div>
       <div v-if="category.sub_category.length > 0" class="box py-8 px-3 lg:px-14">
           <div v-for="(category, index) in category.sub_category" :key="index" class="item p-3 flex flex-col justify-between">
               <div class="w-full imgbox" style="border-radius: 7.81px">
-                  <img :src="category.image" class="w-full h-full">
+                  <img :src="category.image" class="skeleton w-full h-full">
               </div>
               <div class="mt-2">
                     <h1 class="font-bold text-lg">{{category.name}}</h1> 
@@ -52,6 +52,18 @@ export default {
 </script>
 
 <style scoped>
+.skeleton {
+  /* opacity: .7; */
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
 .cont{
     background: linear-gradient(114.28deg, #2EA05B -9.79%, #CCCD34 104.57%);
 
@@ -64,12 +76,7 @@ export default {
     flex-wrap: nowrap;
     
 }
-.norecord{
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .box::-webkit-scrollbar
 {
   height: 0px;

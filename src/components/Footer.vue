@@ -17,10 +17,10 @@
               <ul>
                   <li><a href=""></a></li>
                   <li class="light">
-                      <router-link to="/" class="mt-4 text-sm">Terms of Service</router-link>
+                      <router-link to="/home/terms" class="mt-4 text-sm">Terms of Service</router-link>
                   </li>
                   <li class="light">
-                      <router-link to="/" class="mt-4 text-sm">Privacy Policy</router-link>
+                      <router-link to="/home/privacypolicy" class="mt-4 text-sm">Privacy Policy</router-link>
                   </li>
               </ul>
           </div>

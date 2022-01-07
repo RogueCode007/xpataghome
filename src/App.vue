@@ -38,7 +38,7 @@ export default {
     },
     computed:{
       ...mapState({
-          categories: state => state.categories
+        categories: state => state.categories
       })
     },
     mounted(){
@@ -67,6 +67,9 @@ export default {
 }
 .light{
   font-family: "Cera Pro Light";
+}
+.blacktext{
+  color: #454545
 }
 .l-modal{
   display: block;

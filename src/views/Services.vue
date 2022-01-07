@@ -6,16 +6,16 @@
                 <p class="mt-4 light text-white lg:text-xl">{{category.description}}</p>
           </div>
       </div>
-      <div class="py-8 px-3 lg:px-14">
+      <div class="py-8 px-3 lg:px-14 header">
           <div class="lg:flex lg:justify-between">
               <div class="lg:flex lg:gap-6">
-                  <select class="py-2 w-full block px-3 rounded outline-none border focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+                  <select class="py-2 w-full block px-3 rounded outline-none border focus:outline-none  focus:border-transparent">
                       <option value="">Crop disease specialist</option>
                   </select>
-                  <select class="mt-4 lg:mt-0 w-full block py-2 px-3 rounded outline-none border focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+                  <select class="mt-4 lg:mt-0 w-full block py-2 px-3 rounded outline-none border focus:outline-none  focus:border-transparent">
                       <option value="">Budget</option>
                   </select>
-                  <select class="mt-4 lg:mt-0 w-full block py-2 px-3 rounded outline-none border focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+                  <select class="mt-4 lg:mt-0 w-full block py-2 px-3 rounded outline-none border focus:outline-none focus:border-transparent">
                       <option value="">Location</option>
                   </select>
               </div>
@@ -29,8 +29,9 @@
           <p v-if="services.length > 0" class="mt-4 text-gray-500">{{services.length}} service(s) available</p>
           <p v-else class="mt-4 text-gray-500">0 service(s) available</p>
       </div>
+      <Skeleton v-if="$store.state.loading" />
       <div v-if="services.length > 0" class="box py-8 px-3 lg:px-14">
-          <div v-for="(service, index) in services" :key="index" class="item py-3 flex flex-col justify-between">
+          <div v-for="(service, index) in paginatedServices" :key="index" class="item py-3 flex flex-col justify-between">
               <div class="w-full imgbox relative px-3">
                   <img :src="service.image" class="w-full h-full">
                   <div class="absolute person">
@@ -52,6 +53,16 @@
           </div>
       </div>
       <p v-else class="norecord">No records found</p>
+        <div v-if="paginatedServices.length > 0" class="my-8">
+            <t-pagination
+            :total-items="totalRows"
+            :per-page="perPage"
+            :limit="limit"
+            :disabled="disabled"
+            v-model="currentPage"
+            @change="changePage"
+            />
+        </div> 
   </div>
 </template>
 
@@ -59,22 +70,53 @@
 import {mapState} from 'vuex'
 import axios from 'axios'
 import baseURL from "@/main"
+import TPagination from 'vue-tailwind/dist/t-pagination'
+import Skeleton from "@/components/ServiceSkeleton"
 export default {
+    components:{Skeleton, TPagination},
     data(){
         return {
-            services: []
+            services: [],
+            totalRows: 0,
+            perPage: 12,
+            pages: [],
+            page : 1,
+            disabled: false,
+            limit: 5,
+            currentPage: 1,
         }
     },
     computed: {
         ...mapState({
             category : state => state.category
-        })
+        }),
+        paginatedServices(){
+            return this.paginate(this.services)
+        }
+    },
+    watch:{
+        services(){
+            this.setPages()
+        }
     },
     methods:{
         setExpertId(val){
             this.$store.commit('setExpertId', val)
             this.$router.push(`/home/profile/${val}`)
-        }
+        },
+        setPages () {
+            let numberOfPages = Math.ceil(this.services.length / this.perPage);
+            for (let index = 1; index <= numberOfPages; index++) {
+                this.pages.push(index);
+            }
+        },
+        paginate (services) {
+            let page = this.page;
+            let perPage = this.perPage;
+            let from = (page * perPage) - perPage;
+            let to = (page * perPage);
+            return  services.slice(from, to);
+        },
     },
     filters:{
         slicer(val){
@@ -87,7 +129,7 @@ export default {
         axios.get(`${baseURL}/service/category/${this.category.category_id}`)
         .then((res)=>{
             this.services = res.data.data
-            // console.log(this.services)
+            this.totalRows = res.data.data.length
             this.$store.commit('endLoading')
         })
         .catch((err)=>{
@@ -185,7 +227,7 @@ export default {
     }
 }
 @media only screen and (min-width: 1280px){
-    .box{
+    .box, .header{
         max-width: 1500px;
         margin-left: auto;
         margin-right: auto
