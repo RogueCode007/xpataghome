@@ -12,7 +12,7 @@
         </div>
         <div class="mt-10 lg:flex lg:gap-6 mx-auto" style="max-width: 500px">
             <a target="blank" href="https://xpatag.herokuapp.com/signup" style="background: #52B95E;" class="block w-2/3 mx-auto text-sm rounded-3xl px-6 py-2 text-center text-white oultine-none focus:outline-none">Register as an expert</a>
-            <router-link to="/" style="background: #fff; border: 1px solid #52B95E; color: #52B95E" class="block w-2/3 mt-4 text-center lg:mt-0 mx-auto text-sm rounded-3xl px-6 py-2 oultine-none focus:outline-none">Register as a client</router-link>
+            <a target="blank" href="https://xpatagcustomer.herokuapp.com/signup" style="background: #fff;" class="block mt-4 lg:mt-0 w-2/3 mx-auto text-sm rounded-3xl px-6 py-2 text-center text-green-500 border border-solid border-green-500 oultine-none focus:outline-none">Register as a client</a>
         </div>
   </div>
 </template>

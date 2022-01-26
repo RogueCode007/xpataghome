@@ -24,11 +24,11 @@ export default {
   },
   methods:{
     getcategories(){
-        this.$store.commit('startLoading')
+        // this.$store.commit('startLoading')
         axios.get(`${this.baseURL}/category`)
         .then((res)=>{
-            this.$store.commit('endLoading')
-            console.log(res.data.data)
+            // this.$store.commit('endLoading')
+            // console.log(res.data.data)
             this.$store.commit('setCategories', res.data.data)
         })
         .catch((err)=>{
