@@ -45,6 +45,9 @@ export default {
             categories: state => state.categories
         })
     },
+    mounted(){
+        this.$store.commit('showMobileNav', false)
+    }
             
 }
 </script>

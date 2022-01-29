@@ -33,6 +33,9 @@ import Leaders from "@/components/AboutUs/Leaders"
 export default {
     components:{
         Leaders
+    },
+    mounted(){
+        this.$store.commit('showMobileNav', false)
     }
 }
 </script>

@@ -70,7 +70,7 @@
                 </div>
                 <div class="mt-6 px-3 lg:px-14 mb-10">
                     <div class="rounded border border-solid">
-                            <div class="p-3">
+                            <div class="p-3" v-if="profile.portfolio">
                                 <h3 class="font-bold">About {{profile.firstname}} {{profile.lastname}}</h3>
                                 <p class="light mt-4">{{profile.portfolio[profile.portfolio.length - 1].description}}</p>
                             </div>

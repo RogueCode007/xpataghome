@@ -5,12 +5,12 @@
         <path d="M15.0479 8.30127L0 32.8766C2.78995 30.5615 9.20685 25.504 12.5548 23.7944C16.7397 21.6574 18.0753 26.9109 18.5205 27.7122C18.9658 28.5136 22.7945 34.7465 26.8014 32.7876C30.0069 31.2204 29.2648 27.8606 28.4932 26.3766L15.0479 8.30127Z" fill="white"/>
         <path d="M31.9315 25.3767L20 9.88356C28.1918 17.2205 41.3402 6.3516 46.8904 0L31.9315 25.3767Z" fill="white"/>
       </svg>
-      <div @click="showNav" class="flex items-center p-2 border text-white border-solid border rounded">
+      <button @click="showNav" class="flex items-center p-2 border text-white border-solid border rounded">
         Menu
         <svg  class="ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 18H3V16H12V18ZM21 13H3V11H21V13ZM21 8H12V6H21V8Z" fill="#fff"></path>
         </svg>
-      </div>
+      </button>
       <NavItems v-if="$store.state.showMobileNav" />
   </div>
 </template>

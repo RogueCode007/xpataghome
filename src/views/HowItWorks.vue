@@ -100,7 +100,9 @@
 
 <script>
 export default {
-
+    mounted(){
+        this.$store.commit('showMobileNav', false)
+    }
 }
 </script>
 
