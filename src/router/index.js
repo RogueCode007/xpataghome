@@ -79,5 +79,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+router.beforeEach((to, from, next) => {
+  if(!to.hash){
+    window.scrollTo(0, 0);
+  }
+  next()
+})
 
 export default router

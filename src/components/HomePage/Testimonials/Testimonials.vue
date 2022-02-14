@@ -38,7 +38,6 @@
 </style>
 
 <script>
-// import imgAPI from '~/static/images/imgAPI'
 import image from "@/assets/Images/Testimonials/Ellipse 16.png"
 export default {
   data() {

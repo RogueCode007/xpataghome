@@ -16,7 +16,7 @@ import GreenGradient from "@/components/HomePage/GreenGradient"
 import Categories from "@/components/HomePage/Categories"
 import BlackBox from "@/components/HomePage/BlackBox"
 import GreenBox from "@/components/HomePage/GreenBox"
-import Testimonials from "@/components/HomePage/Testimonials/Testimonials"
+import Testimonials from "@/components/HomePage/TestimonialsBox"
 export default {
   name: 'Home',
   components: {

@@ -1,12 +1,11 @@
 <template>
   <div class="">
       <div class="grd px-3 md:px-14 py-10 pb-14 md:py-20 relative">
-          <h1 class="text-2xl font-bold text-white md:mx-auto md:text-center md:text-3xl">Get expert support in 3 easy steps</h1>
-          <p class="mt-6 text-white light md:text-center md:mx-auto text-lg md:text-xl">We make it so simple, you won't need the hassle</p>
-          <div class="mt-10 bg-white relative flex gap-4 items-center py-2 px-2 mx-auto" style="border-radius: 45px;">
+          <h1 class="text-2xl font-bold text-white md:mx-auto md:text-center md:text-3xl lg:text-5xl">We make it so simple, you won't need the hassle</h1>
+          <!-- <div class="mt-10 bg-white relative flex gap-4 items-center py-2 px-2 mx-auto" style="border-radius: 45px;">
                 <input type="text" class="w-full focus:outline-none" placeholder="Enter your email address">
                 <button class="text-white bg-green-500 py-1 px-6" style="border-radius: 45px">continue</button>
-         </div>
+         </div> -->
          <div class="imgdiv absolute">
             <div class="relative w-full h-full">
                 <a class="play" target="_blank" href="https://youtube.com" rel="noopener noreferrer" style="display: block;">
@@ -29,7 +28,7 @@
          </div>
       </div>
       <div class="py-6">
-          <h2 class="text-2xl font-bold text-center">Get Started Now</h2>
+          <h2 class="text-2xl font-bold text-center">Get Expert Support in Three Steps</h2>
           <div class="py-8 px-3 flexlist">
               <div class="item">
                   <div class="svgcircle mx-auto">

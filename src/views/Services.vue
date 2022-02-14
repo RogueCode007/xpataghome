@@ -7,7 +7,7 @@
           </div>
       </div>
       <div class="py-8 px-3 lg:px-14 header">
-          <div class="lg:flex lg:justify-between">
+          <!-- <div class="lg:flex lg:justify-between">
               <div class="lg:flex lg:gap-6">
                   <select class="py-2 w-full block px-3 rounded outline-none border focus:outline-none  focus:border-transparent">
                       <option value="">Crop disease specialist</option>
@@ -25,7 +25,7 @@
                   </svg>
                   <input type="text" placeholder="Search" class="bg-white w-full py-2 px-3 outline-none">
               </div>
-          </div>
+          </div> -->
           <p v-if="services.length > 0" class="mt-4 text-gray-500">{{services.length}} service(s) available</p>
           <p v-else class="mt-4 text-gray-500">0 service(s) available</p>
       </div>
