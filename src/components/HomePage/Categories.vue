@@ -10,12 +10,12 @@
                 </div>
             </div>
         </div>
-        <button @click="scroll('left')" class="left-arrow hidden lg:flex bg-gray-200 rounded-full items-center justify-center absolute">
+        <button @click="scroll('right')" class="left-arrow hidden lg:flex bg-gray-200 rounded-full items-center justify-center absolute">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.83 11L11.41 7.41L10 6L4 12L10 18L11.41 16.59L7.83 13H20V11H7.83Z" fill="#2E3A59"></path>
           </svg>
         </button>
-        <button @click="scroll('right')" class="right-arrow hidden lg:flex bg-gray-200 rounded-full items-center justify-center absolute">
+        <button @click="scroll('left')" class="right-arrow hidden lg:flex bg-gray-200 rounded-full items-center justify-center absolute">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.17 13L12.59 16.59L14 18L20 12L14 6L12.59 7.41L16.17 11H4V13H16.17Z" fill="#2E3A59"></path>
           </svg>
