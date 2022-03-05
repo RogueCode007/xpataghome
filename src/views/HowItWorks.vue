@@ -58,7 +58,7 @@
                   <p class="text-center light mt-4">Sit back and relax while you get answers to your Agribusiness challenges</p>
               </div>
           </div>
-          <a target="blank" href="https://xpatagcustomer.herokuapp.com/signup" class="link bg-green-500 text-center text-white py-1 px-6 block mx-auto mt-4">Sign up today</a>
+          <a target="blank" href="https://user.xpatag.com/signup" class="link bg-green-500 text-center text-white py-1 px-6 block mx-auto mt-4">Sign up today</a>
       </div>
       <div class="py-6">
           <h2 class="text-2xl font-bold text-center">Get started now as an Expert</h2>
@@ -91,7 +91,7 @@
                   <p class="text-center light mt-4">Get paid anywhere in the world, with a seamless payment experience</p>
               </div>
           </div>
-          <a target="blank" href="https://xpatag.herokuapp.com/signup" class="link bg-green-500 text-center text-white py-1 px-6 block mx-auto mt-4">Sign up today</a>
+          <a target="blank" href="https://expert.xpatag.com/signup" class="link bg-green-500 text-center text-white py-1 px-6 block mx-auto mt-4">Sign up today</a>
       </div>
       
   </div>

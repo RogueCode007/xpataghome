@@ -65,7 +65,7 @@ export default {
   methods:{
     bookService(){
       console.log(this.service.id)
-      window.open(`https://xpatagcustomer.herokuapp.com/login?serviceId=${this.service.id}`, '_blank')
+      window.open(`https://expert.xpatag.com/login?serviceId=${this.service.id}`, '_blank')
     }
   },
   computed:{
